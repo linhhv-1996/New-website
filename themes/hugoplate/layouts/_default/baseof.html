@@ -1,53 +1,80 @@
 <!doctype html>
-<html
-  itemscope
-  class="{{- if not site.Params.theme_switcher -}}
+<html itemscope class="{{- if not site.Params.theme_switcher -}}
     {{- site.Params.theme_default -}}
-  {{- end -}}"
-  lang="{{ site.LanguageCode | default `en-US` }}"
-  itemtype="http://schema.org/WebPage">
-  <head>
-    <!-- head (don't cache it) -->
-    {{ partial "essentials/head.html" . }}
+  {{- end -}}" lang="{{ site.LanguageCode | default `en-US` }}" itemtype="http://schema.org/WebPage">
+
+<head>
+  <!-- head (don't cache it) -->
+  {{ partial "essentials/head.html" . }}
 
 
-    <!-- style (always cache it) -->
-    {{ partialCached "essentials/style.html" . }}
+  <!-- style (always cache it) -->
+  {{ partialCached "essentials/style.html" . }}
 
-  </head>
+</head>
 
-  <body>
-    <!-- cache partial only in production -->
-    {{ if hugo.IsProduction }}
-      {{ partialCached "preloader.html" . }}
-      {{ partialCached "gtm-noscript.html" . }}
-    {{ else }}
-      {{ partial "preloader.html" . }}
-
-
-      <!-- tailwind size indicator -->
-      {{ partial "components/tw-size-indicator.html" . }}
-    {{ end }}
+<body>
+  <!-- cache partial only in production -->
+  {{ if hugo.IsProduction }}
+  {{ partialCached "preloader.html" . }}
+  {{ partialCached "gtm-noscript.html" . }}
+  {{ else }}
+  {{ partial "preloader.html" . }}
 
 
-    <!-- announcement -->
-    {{ partialCached "announcement.html" . }}
+  <!-- tailwind size indicator -->
+  {{ partial "components/tw-size-indicator.html" . }}
+  {{ end }}
 
 
-    <!-- header (don't cache it) -->
-    {{ partial "essentials/header.html" . }}
-    {{ partial "search-modal.html" (dict "Context" . ) }}
+  <!-- announcement -->
+  {{ partialCached "announcement.html" . }}
 
 
-    <main>
-      {{ block "main" . }}{{ end }}
-    </main>
-
-    <!-- footer -->
-    {{ partial "essentials/footer.html" . }}
+  <!-- header (don't cache it) -->
+  {{ partial "essentials/header.html" . }}
+  {{ partial "search-modal.html" (dict "Context" . ) }}
 
 
-    <!-- script (always cache it) -->
-    {{ partialCached "essentials/script.html" . }}
-  </body>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <!-- footer -->
+  {{ partial "essentials/footer.html" . }}
+
+
+  <!-- script (always cache it) -->
+  {{ partialCached "essentials/script.html" . }}
+
+  <button id="scroll-to-top" onclick="scrollToTop()" class="scroll-to-top fixed bottom-4 right-4 
+                       bg-gray-800 text-white rounded-full 
+                       transition duration-300 hover:bg-gray-700 
+                       hover:text-gray-200 z-30">
+    <img style="width: 36px;height: 36px;"
+      src="https://w7.pngwing.com/pngs/51/365/png-transparent-arrow-arrow-up-chevronupcircle-circle-circle-icon-top-arrow-up-navigation-set-arrows-part-one-icon-thumbnail.png"
+      class="w-16 h-16 rounded-full bg-white" alt="">
+  </button>
+
+  <script>
+    const scrollToTopButton = document.getElementById('scroll-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 250) {
+        scrollToTopButton.style.display = 'block';
+      } else {
+        scrollToTopButton.style.display = 'none';
+      }
+    });
+
+    // Smooth scroll to top
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }              
+  </script>
+
+</body>
+
 </html>
