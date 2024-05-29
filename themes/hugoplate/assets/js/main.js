@@ -17,6 +17,9 @@
   // Testimonial Slider
   // ----------------------------------------
   new Swiper(".testimonial-slider", {
+    autoplay: {
+      delay: 2500,
+    },
     spaceBetween: 24,
     loop: true,
     pagination: {

@@ -4,6 +4,7 @@ html {
 
 body {
   @apply bg-body text-base dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text;
+  font-size: 17px !important;
 }
 
 h1,
@@ -56,4 +57,8 @@ code {
 
 blockquote > p {
   @apply my-0 #{!important};
+}
+
+.content :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  font-size: 17px !important;
 }

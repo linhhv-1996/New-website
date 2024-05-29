@@ -7,19 +7,19 @@ pageRef = "/"
 weight = 1
 
 [[main]]
-name = "About"
-pageRef = "/about"
+name = "Blog"
 weight = 2
+pageRef = "/blog"
 
 [[main]]
-name = "Elements"
-pageRef = "/elements"
+name = "About"
+pageRef = "/about"
 weight = 3
 
 [[main]]
-name = "Blog"
+name = "Contact"
+pageRef = "/contact"
 weight = 4
-pageRef = "/blog"
 
 # [[main]]
 # parent = "Pages"
@@ -49,16 +49,17 @@ pageRef = "/blog"
 
 # footer menu
 [[footer]]
-name = "About"
-pageRef = "/about"
-weight = 1
-
-[[footer]]
-name = "Elements"
-pageRef = "/elements"
-weight = 2
+name = "Term of Uses"
+pageRef = "/privacy-policy"
+weight = 3
 
 [[footer]]
 name = "Privacy Policy"
 pageRef = "/privacy-policy"
 weight = 3
+
+[[footer]]
+name = "Disclaimer"
+pageRef = "/privacy-policy"
+weight = 4
+

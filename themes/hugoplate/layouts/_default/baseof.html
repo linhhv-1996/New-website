@@ -47,6 +47,7 @@
   <!-- script (always cache it) -->
   {{ partialCached "essentials/script.html" . }}
 
+  <!-- Back to top -->
   <button id="scroll-to-top" onclick="scrollToTop()" class="scroll-to-top fixed bottom-4 right-4 
                        bg-gray-800 text-white rounded-full 
                        transition duration-300 hover:bg-gray-700 
@@ -72,7 +73,26 @@
         top: 0,
         behavior: 'smooth'
       });
-    }              
+    }
+    
+    // Smooth scroll
+    document.addEventListener("DOMContentLoaded", makeLinksSmooth);
+
+		function makeLinksSmooth() {
+			const navLinks = document.querySelectorAll("#TableOfContents a");
+			navLinks.forEach((link) => {
+				link.addEventListener("click", smoothScroll);
+			});
+		}
+
+		function smoothScroll(e) {
+			e.preventDefault();
+			const targetId = this.getAttribute("href");
+			const targetElement = document.querySelector(targetId);
+			if (targetElement) {
+				targetElement.scrollIntoView({ behavior: "smooth", });
+			}
+		}
   </script>
 
 </body>
