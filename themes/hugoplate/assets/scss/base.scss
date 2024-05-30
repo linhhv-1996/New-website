@@ -62,3 +62,8 @@ blockquote > p {
 .content :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   font-size: 17px !important;
 }
+
+.bg-gradient-to-b {
+  background-color: white !important;
+  background-image: none !important;
+}
