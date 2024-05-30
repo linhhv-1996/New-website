@@ -10,9 +10,8 @@ tags: ["nextjs", "tailwind"]
 draft: false
 ---
 
-Customization page describes common Mainroad configuration parameters which can be specified via configuration file or
-via Front Matter section. That includes logo section tuning, adding a sidebar with widgets, adjusting highlight color,
-and more.
+Customization page describes common Mainroad configuration parameters which can be specified via configuration file.
+That includes logo section tuning, adding a sidebar with widgets and more.
 
 <!--more-->
 

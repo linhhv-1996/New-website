@@ -4,7 +4,7 @@ html {
 
 body {
   @apply bg-body text-base dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text;
-  font-size: 17px !important;
+  font-size: 16px !important;
 }
 
 h1,
@@ -66,4 +66,25 @@ blockquote > p {
 .bg-gradient-to-b {
   background-color: white !important;
   background-image: none !important;
+}
+
+.blog-card-title {
+  font-size: 20px;
+}
+
+.summary + p {
+  color: rgba(38, 50, 56, 0.7) !important;
+}
+
+#TableOfContents {
+  line-height: 20px;
+}
+
+#TableOfContents ol {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.navbar-brand img {
+  height: 32px;
 }
